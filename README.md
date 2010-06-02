@@ -14,15 +14,42 @@ If you've ever used a package manager (apt, yum, rubygems, etc., etc.), you know
 
 ## Installing a new library:
 
-  kapow istall <name>
-    
-For example:
-  kapow install awesome
+  kapow istall [name]
+  
+## Removing a library:
+
+  kapow remove [name]
+
+## Updating a libary:
+
+  TODO:  ^ this
+
+## Searching for libraries:
+
+  kapow search [name or partial name]
     
 ## Including the library in your script
   require 'awesome'
   
-You can even run the above snippet in your terminal, and source libraries for use right away!
+# EXAMPLES!!!??1$TEXAS
+
+Say we have a kapow lib called 'sweet' (This assumes you have run `kapow install sweet`).  The contents of sweet are as such:
+
+ sweet() {
+   echo "SWEEEEET"
+ }
+
+Now, we want to use the 'sweet' lib inside our own script:
+
+<pre>
+  #!/usr/bin/env bash
+  
+  require 'sweet'
+  
+  sweet # echoes "SWEEEEET"
+</pre>
+
+What's even more ridiculous is that after you've installed kapow, you can require libraries directly from your terminal.  No joke.  Try it!
 
 # Disclaimer
 
