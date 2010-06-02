@@ -1,25 +1,26 @@
-KAPOW_LIB_DIR="/Users/dan/Code/kapow/lib/"
-KAPOW_LIST="/Users/dan/Code/kapow/formulae/list"
-KAPOW_FORMULAE_REPO="http://github.com/danryan/kapow/raw/master/formulae/"
-WGET="wget -P $KAPOW_LIB_DIR -q -t 1 --timeout=5 -O -"
+KAPOW_LIB_DIR="/usr/local/lib/kapow/lib/"
+KAPOW_LIST="/usr/local/lib/kapow/scripts/list"
+KAPOW_SCRIPTS_DIR="/usr/local/lib/kapow/scripts/"
+KAPOW_SCRIPTS_REPO="http://github.com/danryan/kapow/raw/master/scripts/"
+WGET="wget -P $KAPOW_SCRIPTS_DIR -q -t 1 --timeout=5 -"
 
 do_install() {
 	echo "Installing $1..."	
-	get_formula $1
-	echo "Done!"
+	get_formula $1 && echo "Done!" || die "No such script."
 }
 
 get_formula() {
-	$WGET $KAPOW_FORMULAE_REPO$1 1> /dev/null || die "No such formula."
+	$WGET $KAPOW_SCRIPTS_REPO$1 1> /dev/null 
 }
 
 do_remove() {
 	echo "Removing $1..."
+	rm $KAPOW_SCRIPTS_DIR/$1 || die "Script is not installed."
 }
 
 do_search() {
 	echo "Searching for $1..."
-	grep "$1" $KAPOW_LIST || die "Formula not found."
+	grep "$1" $KAPOW_LIST || die "Script doesn't seem to exist."
 }
 
 die() {
@@ -28,6 +29,6 @@ die() {
 }
 
 require() {
-  source "$KAPOW_LIB_DIR$1" || die "File could not be read or does not exist."
+  source "$KAPOW_LIB_DIR$1" || die "File could not be read or is not installed."
 }
 

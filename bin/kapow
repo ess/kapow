@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 
-source "../lib/kapow"
+source "/usr/local/lib/kapow/lib/kapow"
 
 case $1 in
 	install)
@@ -17,6 +17,7 @@ case $1 in
 	echo "Version: 0.0.1"
 	;;
 	*)
-	echo "Usage: kapow [options]"
+	echo "Usage: kapow (install|remove|search) <formula>"
 	;;
 esac
+

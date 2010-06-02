@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+PREFIX="/usr/local"
+BIN_PREFIX="$PREFIX/bin"
+LIB_PREFIX="$PREFIX/lib"
+
+
+# Let's start by creating the necessary library directories 
+mkdir -p $LIB_PREFIX/kapow/{lib,formulae,scripts}
+
+# Now, we copy the executable to the BIN_PREFIX; in this case, /usr/local/bin
+cp -f $PWD/bin/* $BIN_PREFIX/
+
+# Make sure this beast is executable.
+chmod +x $BIN_PREFIX/kapow
+
+# Copy on over the kapow stdlib.
+cp -f $PWD/lib/* $LIB_PREFIX/kapow/lib/
