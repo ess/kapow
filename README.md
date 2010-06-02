@@ -14,22 +14,23 @@ If you've ever used a package manager (apt, yum, rubygems, etc., etc.), you know
 
 ## Installing a new library:
 
-  <pre>kapow install [name]</pre>
+<pre>kapow install [name]</pre>
   
 ## Removing a library:
 
-  <pre>kapow remove [name]</pre>
+<pre>kapow remove [name]</pre>
 
 ## Updating a libary:
 
-  <pre>TODO:  ^ this</pre>
+<pre>TODO:  ^ this</pre>
 
 ## Searching for libraries:
 
-  <pre>kapow search [name or partial name]</pre>
+<pre>kapow search [name or partial name]</pre>
     
 ## Including the library in your script
-  <pre>require 'awesome'</pre>
+
+<pre>require 'awesome'</pre>
   
 # EXAMPLES!!!??1$TEXAS
 
