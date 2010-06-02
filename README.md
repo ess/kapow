@@ -4,7 +4,7 @@ Kapow is a Bash library management tool.  You might be asking yourself "WHY?"; I
 # Installation
 Run the installer script:
 
-  chmod +x installer && ./installer
+<pre>chmod +x installer && ./installer</pre>
 
 You'll want to open it and change the <code>$PREFIX</code> variable in case you don't like things being installed into <code>usr/local</code>.
 
@@ -36,9 +36,11 @@ If you've ever used a package manager (apt, yum, rubygems, etc., etc.), you know
 
 Say we have a kapow lib called 'sweet' (This assumes you have run `kapow install sweet`).  The contents of sweet are as such:
 
+<pre>
  sweet() {
    echo "SWEEEEET"
  }
+</pre>
 
 Now, we want to use the 'sweet' lib inside our own script:
 
