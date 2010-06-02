@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+source "../lib/kapow"
+
+require 'awesome'
+
+case $1 in
+	install)
+		install_pkg $2
+	;;
+	remove)
+		remove_pkg $2
+	;;
+	search)
+		search_pkg $2
+	;;
+	"-v")
+	echo "Version: 0.0.1"
+	;;
+	*)
+	echo "Usage: kapow [options]"
+	;;
+esac
+
+
+
+awesome

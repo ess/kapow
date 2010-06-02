@@ -1,0 +1,24 @@
+KAPOW_LIB="/Users/dan/Code/kapow/lib/"
+KAPOW_REPO="http://github.com/danryan/kapow_repo/"
+function install_pkg {
+	echo "Installing $1..."
+	
+}
+
+function remove_pkg {
+	echo "Removing $1..."
+}
+
+function search_pkg {
+	echo "Searching for $1..."
+}
+
+function require {
+  if [ -f $KAPOW_LIB$1 ] && [ -r $KAPOW_LIB$1 ] 
+	then
+		echo $1
+    source "$KAPOW_LIB$1"
+	else
+		echo "File could not be read or does not exist." && exit
+  fi
+}
