@@ -30,7 +30,7 @@ If you've ever used a package manager (apt, yum, rubygems, etc., etc.), you know
     
 ## Including the library in your script
 
-<pre>require 'awesome'</pre>
+<pre>require '[name]'</pre>
   
 # EXAMPLES!!!??1$TEXAS
 
