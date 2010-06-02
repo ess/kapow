@@ -6,7 +6,7 @@ Run the installer script:
 
 <pre>chmod +x installer && ./installer</pre>
 
-You'll want to open it and change the `$PREFIX` variable in case you don't like things being installed into `usr/local`.
+You'll want to open it and change the `$PREFIX` variable in case you don't like things being installed into `/usr/local`.
 
 # Usage
 
