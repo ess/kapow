@@ -3,6 +3,8 @@
 
 source "../lib/kapow"
 
+require "poop"
+
 case $1 in
 	install)
 		do_install $2

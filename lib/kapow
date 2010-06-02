@@ -1,5 +1,5 @@
 KAPOW_LIB="/Users/dan/Code/kapow/lib/"
-KAPOW_FORMULAE="http://github.com/danryan/kapow_repo/"
+KAPOW_FORMULAE="http://github.com/danryan/kapow/"
 
 
 do_install() {
@@ -14,17 +14,12 @@ do_search() {
 	echo "Searching for $1..."
 }
 
-require() {
-  if [ -f $KAPOW_LIB$1 ] && [ -r $KAPOW_LIB$1 ] 
-	then
-		echo $1
-    source "$KAPOW_LIB$1"
-	else
-		echo "File could not be read or does not exist." && exit
-  fi
-}
-
 die() {
   echo -e "kapow error:  $1" 1>&2
   exit 255
 }
+
+require() {
+  source "$KAPOW_LIB$1" || die "File could not be read or does not exist."
+}
+
