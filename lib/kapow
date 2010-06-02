@@ -34,7 +34,7 @@ die() {
 }
 
 require() {
-	echo "Requiring '$1' script..."
+	echo "Loaded '$1' script..."
   source "$KAPOW_LIB_DIR$1" || die "File could not be read or is not installed."
 }
 

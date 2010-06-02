@@ -16,3 +16,6 @@ chmod +x $BIN_PREFIX/kapow
 
 # Copy on over the kapow stdlib.
 cp -f $PWD/lib/* $LIB_PREFIX/kapow/lib/
+
+
+grep "source '/usr/local/lib/kapow/lib/kapow'" ~/.bashrc 1> /dev/null || echo "source '/usr/local/lib/kapow/lib/kapow'" >> ~/.bashrc
