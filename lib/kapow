@@ -1,9 +1,16 @@
-KAPOW_LIB="/Users/dan/Code/kapow/lib/"
-KAPOW_FORMULAE="http://github.com/danryan/kapow/"
-
+KAPOW_LIB_DIR="/Users/dan/Code/kapow/lib/"
+KAPOW_LIST="/Users/dan/Code/kapow/formulae/list"
+KAPOW_FORMULAE_REPO="http://github.com/danryan/kapow/raw/master/formulae/"
+WGET="wget -P $KAPOW_LIB_DIR -q -t 1 --timeout=5 -O -"
 
 do_install() {
 	echo "Installing $1..."	
+	get_formula $1
+	echo "Done!"
+}
+
+get_formula() {
+	$WGET $KAPOW_FORMULAE_REPO$1 1> /dev/null || die "No such formula."
 }
 
 do_remove() {
@@ -12,14 +19,15 @@ do_remove() {
 
 do_search() {
 	echo "Searching for $1..."
+	grep "$1" $KAPOW_LIST || die "Formula not found."
 }
 
 die() {
-  echo -e "kapow error:  $1" 1>&2
+  echo "kapow error:  $1" 1>&2
   exit 255
 }
 
 require() {
-  source "$KAPOW_LIB$1" || die "File could not be read or does not exist."
+  source "$KAPOW_LIB_DIR$1" || die "File could not be read or does not exist."
 }
 

@@ -3,17 +3,15 @@
 
 source "../lib/kapow"
 
-require "poop"
-
 case $1 in
 	install)
 		do_install $2
 	;;
 	remove)
-		do_install $2
+		do_remove $2
 	;;
 	search)
-		do_install $2
+		do_search $2
 	;;
 	"-v")
 	echo "Version: 0.0.1"
