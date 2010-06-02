@@ -54,6 +54,12 @@ Now, we want to use the 'sweet' lib inside our own script:
 
 What's even more ridiculous is that after you've installed kapow, you can require libraries directly from your terminal.  No joke.  Try it!
 
+# TODOS
+
+* Write an update function
+* Devise and enforce some kind of metadata in a kapow lib to pull things like creator, homepage, version, etc.
+* Think of an actual use case.
+
 # Disclaimer
 
 Good science, you had better know what you're doing!  You take full responsibility for your actions.
