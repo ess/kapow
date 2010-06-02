@@ -10,7 +10,12 @@ do_install() {
 }
 
 get_formula() {
-	$WGET $KAPOW_SCRIPTS_REPO$1 1> /dev/null 
+	if [ ! -f $KAPOW_SCRIPTS_DIR$1 ]
+	then
+		$WGET $KAPOW_SCRIPTS_REPO$1 1> /dev/null 
+	else
+		die "Script already installed!"
+	fi
 }
 
 do_remove() {
@@ -29,6 +34,7 @@ die() {
 }
 
 require() {
+	echo "Requiring '$1' script..."
   source "$KAPOW_LIB_DIR$1" || die "File could not be read or is not installed."
 }
 
